@@ -4,12 +4,12 @@ TARGET_ARCH   = linux64
 
 CXX          = g++
 LD           = g++
-CXXFLAGS     = -Wall  -I. -isystem $(SYSTEMC)/include  -Wno-deprecated -O2
+CXXFLAGS     = -Wall  -I. -isystem $(SYSTEMC)/include -I include -Wno-deprecated -O2
 LDFLAGS      =  -L$(SYSTEMC)/lib-$(TARGET_ARCH)
 
-SOURCES      = $(wildcard *.cpp)
+SOURCES      = $(wildcard src/*.cpp)
 OBJS         = $(patsubst %.cpp,%.o,$(SOURCES))
-EXE          = simulation.x
+EXE          = bin/simulation.x
 
 all: $(EXE)
 
@@ -32,4 +32,3 @@ clean :
 	-rm -f core
 	-rm -f *.vcd
 	-rm -f .deps
-

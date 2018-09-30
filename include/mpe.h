@@ -5,16 +5,17 @@
 
 #include <systemc.h>
 
+template <typename T>
 SC_MODULE(mpe)
 {
-  sc_in<float> data_in;
-  sc_out<float> data_out;
+  sc_in<T> data_in;
+  sc_out<T> data_out;
 
   sc_in<bool> clear;
 
   sc_in<bool> clk;
 
-  float reg;
+  T reg;
 
   void step()
   {
@@ -29,7 +30,7 @@ SC_MODULE(mpe)
   SC_CTOR(mpe)
   {
     SC_METHOD(step);
-    sensitive << clk;
+    sensitive << clk.pos();
   }
 };
 

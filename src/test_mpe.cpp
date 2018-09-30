@@ -3,9 +3,9 @@
 #include <systemc.h>
 #include "mpe.h"
 #include "cycle.h"
+#include "types.h"
 
 using namespace std;
-typedef float DataType;
 
 int sc_main(int argc, char * argv[])
 {
@@ -18,14 +18,14 @@ int sc_main(int argc, char * argv[])
   DataType data[12] = {2, 12, 3, 9, 2, 7, 3, 9, 7, 0, 3, 8};
 
   sc_trace_file *trace_file;
-  trace_file = sc_create_vcd_trace_file("mpe_trace");
+  trace_file = sc_create_vcd_trace_file("../traces/mpe_trace");
 
   sc_trace(trace_file, data_in, "data_in");
   sc_trace(trace_file, data_out, "data_out");
   sc_trace(trace_file, clear, "clear");
   sc_trace(trace_file, clk, "clk");
 
-  mpe mpe("mpe");
+  mpe<DataType> mpe("mpe");
   mpe.data_in(data_in);
   mpe.data_out(data_out);
   mpe.clear(clear);
