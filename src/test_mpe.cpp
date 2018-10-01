@@ -5,9 +5,7 @@
 #include "cycle.h"
 #include "types.h"
 
-using namespace std;
-
-int sc_main(int argc, char * argv[])
+void test_mpe()
 {
   sc_signal<DataType> data_in;
   sc_signal<DataType> data_out;
@@ -18,7 +16,8 @@ int sc_main(int argc, char * argv[])
   DataType data[12] = {2, 12, 3, 9, 2, 7, 3, 9, 7, 0, 3, 8};
 
   sc_trace_file *trace_file;
-  trace_file = sc_create_vcd_trace_file("../traces/mpe_trace");
+  trace_file = sc_create_vcd_trace_file("mpe_trace");
+  trace_file->set_time_unit(1, SC_NS);
 
   sc_trace(trace_file, data_in, "data_in");
   sc_trace(trace_file, data_out, "data_out");
@@ -35,10 +34,8 @@ int sc_main(int argc, char * argv[])
   {
     data_in = data[i];
     clear = (i % 4 == 0);
-    next_cycle(clk, 1);
+    next_cycle(clk);
   }
 
   sc_close_vcd_trace_file(trace_file);
-
-  return EXIT_SUCCESS;
 }

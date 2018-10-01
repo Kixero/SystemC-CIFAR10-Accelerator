@@ -1,0 +1,6 @@
+cycle.o: src/cycle.cpp
+test_mpe.o: src/test_mpe.cpp include/mpe.h include/cycle.h \
+ include/types.h
+test_memory.o: src/test_memory.cpp include/cycle.h include/types.h \
+ include/memory.h
+main.o: src/main.cpp include/tests.h
