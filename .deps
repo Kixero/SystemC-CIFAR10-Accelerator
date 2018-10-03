@@ -1,1 +1,3 @@
-main.o: src/main.cpp
+test_relu.o: src/test_relu.cpp include/types.h include/cycle.h \
+ include/relu.h include/types.h
+main.o: src/main.cpp include/tests.h
