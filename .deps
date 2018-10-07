@@ -1,1 +1,4 @@
-main.o: src/main.cpp
+test_mpectrlr.o: src/test_mpectrlr.cpp include/cycle.h \
+ include/hyperparams.h include/ctrlrconsts.h include/hyperparams.h \
+ include/mpectrlr.h
+main.o: src/main.cpp include/tests.h
