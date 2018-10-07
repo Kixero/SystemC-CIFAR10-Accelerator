@@ -29,3 +29,5 @@
 *.x
 
 *.vcd
+.deps
+bin/*.x
