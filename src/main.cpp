@@ -7,7 +7,5 @@ using namespace std;
 
 int sc_main(int argc, char * argv[])
 {
-  test_memory();
-
   return EXIT_SUCCESS;
 }
