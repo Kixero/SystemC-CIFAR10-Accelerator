@@ -27,8 +27,8 @@ ifneq ($(MAKECMDGOALS),clean)
 endif
 
 clean :
-	-rm -f *.o *~ *_old $(EXE)
-	-rm -f simulation.x
+	-rm -f src/*.o *~ *_old $(EXE)
+	-rm -f bin/simulation.x
 	-rm -f core
 	-rm -f *.vcd
 	-rm -f .deps
