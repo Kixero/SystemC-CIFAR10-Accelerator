@@ -1,3 +1,3 @@
 // types.h
 
-typedef DataType float;
+typedef float DataType;

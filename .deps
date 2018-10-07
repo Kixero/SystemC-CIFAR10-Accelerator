@@ -1,1 +1,2 @@
-main.o: src/main.cpp
+cycle.o: src/cycle.cpp
+main.o: src/main.cpp include/tests.h
