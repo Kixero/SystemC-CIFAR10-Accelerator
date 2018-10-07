@@ -4,6 +4,9 @@
 #define MEMORY_H
 
 #include <systemc.h>
+#include <vector>
+
+using namespace std;
 
 template <typename T, int size>
 SC_MODULE(memory)
@@ -17,18 +20,33 @@ SC_MODULE(memory)
 
   sc_in<bool> clk;
 
-  T memorySpace[size];
+  vector<T> memorySpace;
 
   void step()
   {
-    if (w_e)
+    if (w_e && addr_w < size)
     {
       memorySpace[addr_w] = data_in;
     }
     data_out = memorySpace[addr_r];
   }
 
-  SC_CTOR(memory)
+public:
+  void loadMemory(vector<T> data)
+  {
+    for (int i = 0; i < size; i++)
+    {
+      memorySpace[i] = data[i];
+    }
+  }
+
+  vector<T> getMemory()
+  {
+    return memorySpace;
+  }
+
+  SC_CTOR(memory):
+    memorySpace(size, T(0))
   {
     SC_METHOD(step);
     sensitive << clk.pos();

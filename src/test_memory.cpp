@@ -30,7 +30,7 @@ void test_memory()
   sc_trace(trace_file, addr_w, "addr_w");
   sc_trace(trace_file, clk, "clk");
 
-  memory<DataType, 12> memory("/memory");
+  memory<DataType, 12> memory("memory");
   memory.data_in(data_in);
   memory.data_out(data_out);
   memory.addr_r(addr_r);

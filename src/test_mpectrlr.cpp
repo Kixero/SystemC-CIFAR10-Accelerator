@@ -54,4 +54,6 @@ void test_mpectrlr()
   {
     next_cycle(clk);
   }
+
+  sc_close_vcd_trace_file(my_trace);
 }
