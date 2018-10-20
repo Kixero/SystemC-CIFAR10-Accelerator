@@ -7,7 +7,7 @@ using namespace std;
 
 int sc_main(int argc, char * argv[])
 {
-  test_pooling();
+  test_pe();
 
   return EXIT_SUCCESS;
 }

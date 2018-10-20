@@ -5,7 +5,8 @@
 
 extern void test_memory();
 extern void test_mpe();
-void extern test_mpectrlr();
-void extern test_pooling();
+extern void test_mpectrlr();
+extern void test_pooling();
+extern void test_pe();
 
 #endif

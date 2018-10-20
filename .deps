@@ -11,6 +11,7 @@ test_mpectrlr.o: src/test_mpectrlr.cpp include/cycle.h \
  include/mpectrlr.h include/ctrlrconsts.h
 ctrlrconsts.o: src/ctrlrconsts.cpp include/ctrlrconsts.h \
  include/hyperparams.h
+test_pe.o: src/test_pe.cpp include/pe.h include/cycle.h include/types.h
 mpectrlr.o: src/mpectrlr.cpp include/mpectrlr.h include/hyperparams.h \
  include/ctrlrconsts.h
 main.o: src/main.cpp include/tests.h
