@@ -31,3 +31,4 @@
 *.vcd
 .deps
 bin/*.x
+.vscode/*
